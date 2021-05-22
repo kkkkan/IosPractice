@@ -16,24 +16,31 @@ struct ContentView: View {
                     .font(.bold(.title)())
                     .padding()
                     .onTapGesture(perform: {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/ self.model.secondViewPushed = true
                     })
-                
-                NavigationLink(destination: SecondView(), isActive: self.$model.secondViewPushed){
-                    Button(action: {
-                        self.model.secondViewPushed = true
-                    }) {
-                        Image("pyoko_kagamimochi")
-                            .resizable()
-                            .frame(
-                                width: 380,
-                                height: 400,
-                                alignment: .top)
-                            .cornerRadius(20)
-                        //.disabled(true)
-                        //Text("次へ")
-                    }
+                Image("pyoko_kagamimochi")
+                    .resizable()
+                    .frame(
+                        width: 380,
+                        height: 400,
+                        alignment: .top)
+                    .cornerRadius(20)
+                // 遷移する先と条件を指定するためのView。何も見えるものは設定していないので見えない
+                NavigationLink(destination: CardView(title : "title",contents: ["a","i","u"]), isActive: self.$model.secondViewPushed){
+                    //                    Button(action: {
+                    //                        //self.model.secondViewPushed = true
+                    //                    }) {
+                    //                        Image("pyoko_kagamimochi")
+                    //                            .resizable()
+                    //                            .frame(
+                    //                                width: 380,
+                    //                                height: 400,
+                    //                                alignment: .top)
+                    //                            .cornerRadius(20)
+                    //.disabled(true)
+                    //Text("次へ")
                 }
+                //                }
                 
                 
             }
