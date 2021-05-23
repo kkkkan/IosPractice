@@ -16,20 +16,24 @@ struct TopView: View {
     
     var body: some View {
         
-        NavigationView{
-            VStack{
-                NavigationLink(
-                    destination: MemoList(memos: self.model.memos),
-                    isActive: self.$model.isDataLoaded,
-                    label: {
-                        EmptyView()
-                    })
+        //        NavigationView{
+        VStack{
+            //                NavigationLink(
+            //                    destination: MemoList(memos: self.model.memos),
+            //                    isActive: self.$model.isDataLoaded,
+            //                    label: {
+            //                        EmptyView()
+            //                    })
+            
+            if(self.model.isDataLoaded){
+                MemoList(memos: self.model.memos)
             }
-        }.onAppear(){
+        }
+        /*}*/.onAppear(){
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 // 一秒後の遅延処理
-                var contetn1=["a","b","c"]
-                var content2=["1","2","3"]
+                let contetn1=["a","b","c"]
+                let content2=["1","2","3"]
                 self.model.setMemos(memos:[Memo(title:"タイトル1",contents: contetn1),Memo(title:"タイトル2",contents: content2)] )
                 //                self.memos = [Memo(title:"タイトル1",contents: contetn1),Memo(title:"タイトル2",contents: content2)]
                 //                isDataLoaded = true
