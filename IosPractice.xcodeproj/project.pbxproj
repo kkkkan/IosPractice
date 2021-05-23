@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3F8175882658C75700C69C1A /* IosPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175872658C75700C69C1A /* IosPracticeApp.swift */; };
-		3F81758A2658C75700C69C1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175892658C75700C69C1A /* ContentView.swift */; };
 		3F81758C2658C75800C69C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81758B2658C75800C69C1A /* Assets.xcassets */; };
 		3F81758F2658C75800C69C1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81758E2658C75800C69C1A /* Preview Assets.xcassets */; };
 		3F81759A2658C75800C69C1A /* IosPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175992658C75800C69C1A /* IosPracticeTests.swift */; };
 		3F8175A52658C75800C69C1A /* IosPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175A42658C75800C69C1A /* IosPracticeUITests.swift */; };
 		3F8175B32658CD8500C69C1A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175B22658CD8500C69C1A /* Model.swift */; };
-		3F8175B52658D1DC00C69C1A /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175B42658D1DC00C69C1A /* SecondView.swift */; };
 		3F8175B7265924E500C69C1A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175B6265924E500C69C1A /* CardView.swift */; };
 		3F8175B92659E2A700C69C1A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175B82659E2A700C69C1A /* TopView.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +37,6 @@
 /* Begin PBXFileReference section */
 		3F8175842658C75700C69C1A /* IosPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8175872658C75700C69C1A /* IosPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosPracticeApp.swift; sourceTree = "<group>"; };
-		3F8175892658C75700C69C1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3F81758B2658C75800C69C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F81758E2658C75800C69C1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F8175902658C75800C69C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +47,6 @@
 		3F8175A42658C75800C69C1A /* IosPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosPracticeUITests.swift; sourceTree = "<group>"; };
 		3F8175A62658C75800C69C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F8175B22658CD8500C69C1A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		3F8175B42658D1DC00C69C1A /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		3F8175B6265924E500C69C1A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3F8175B82659E2A700C69C1A /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,12 +101,10 @@
 			children = (
 				3F8175872658C75700C69C1A /* IosPracticeApp.swift */,
 				3F8175B6265924E500C69C1A /* CardView.swift */,
-				3F8175892658C75700C69C1A /* ContentView.swift */,
 				3F81758B2658C75800C69C1A /* Assets.xcassets */,
 				3F8175902658C75800C69C1A /* Info.plist */,
 				3F81758D2658C75800C69C1A /* Preview Content */,
 				3F8175B22658CD8500C69C1A /* Model.swift */,
-				3F8175B42658D1DC00C69C1A /* SecondView.swift */,
 				3F8175B82659E2A700C69C1A /* TopView.swift */,
 			);
 			path = IosPractice;
@@ -271,9 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F81758A2658C75700C69C1A /* ContentView.swift in Sources */,
 				3F8175B32658CD8500C69C1A /* Model.swift in Sources */,
-				3F8175B52658D1DC00C69C1A /* SecondView.swift in Sources */,
 				3F8175882658C75700C69C1A /* IosPracticeApp.swift in Sources */,
 				3F8175B92659E2A700C69C1A /* TopView.swift in Sources */,
 				3F8175B7265924E500C69C1A /* CardView.swift in Sources */,

@@ -21,34 +21,31 @@ struct CardView: View {
     var body: some View {
         ZStack{
             // FrameLayout的なやつ
-            
-            // 背景として赤色（red）を指定
-            // 背景の付け方はこれで正しいのかは不明
-//            Color.red
-//                .frame(width:380, height: 400)
-//                .cornerRadius(20)
             VStack{
                 // 縦に積んでいく親View　縦型LinearLayout
                 Text(self.title)
                     .font(.bold(.title)())
                     .padding()
+                    .frame(maxWidth: .infinity,alignment : Alignment.leading)
                     .onTapGesture(perform: {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
                     })
-                //            List{ // 最初はListを使っていたが、そうすると引っ張ると下に伸びるアニメーションがかかるのでただVStackに足していくだけにした。
+                //最初はListを使っていたが、そうすると引っ張ると下に伸びるアニメーションがかかるのでただVStackに足していくだけにした。
                 ForEach(contents,id: \.self){ c in
                     Text(c)
-                    //.font(.bold(.title)())
-                    //.padding()
-                    //                }
+                        .padding().frame(maxWidth: .infinity,alignment : Alignment.leading)
                 }
-            }.frame(
-                width: 380,
-                height: 400,
+            }
+            .frame(
+                maxWidth: .infinity, // 横幅match_parent
                 alignment: .top)
-            //.border(Color.black)
-            .background(Color.red)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.black, lineWidth: 2)
+            )
             .cornerRadius(20)
+            .padding() // frameより後にpaddingをつけると、marginになる
+            
             
         }
     }
