@@ -13,7 +13,7 @@ struct IosPracticeApp: App {
         WindowGroup {
             //ContentView().environmentObject(Model())
             
-            TopView().environmentObject(Model())
+            TopView().environmentObject(Model()).environmentObject(ApiModel())
         }
     }
 }

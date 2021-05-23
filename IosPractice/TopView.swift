@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TopView: View {
     @EnvironmentObject var model :Model
+    @EnvironmentObject var apiModel :ApiModel
     //    @State var isDataLoaded = false
     var memos : Array<Memo> = []
     
@@ -17,16 +18,19 @@ struct TopView: View {
     var body: some View {
         VStack{
         
-            if(self.model.isDataLoaded){
-                MemoList(memos: self.model.memos)
+            if(self.apiModel.isLoaded){
+                let contetn1=["a","b","c"]
+                let content2=["1","2","3"]
+//                self.model.setMemos(memos:[Memo(title:"タイトル1",contents: contetn1),Memo(title:"タイトル2",contents: content2)] )
+                MemoList(memos: [Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)])
             }
         }
         .onAppear(){
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 // 一秒後の遅延処理
-                let contetn1=["a","b","c"]
-                let content2=["1","2","3"]
-                self.model.setMemos(memos:[Memo(title:"タイトル1",contents: contetn1),Memo(title:"タイトル2",contents: content2)] )
+//                let contetn1=["a","b","c"]
+//                let content2=["1","2","3"]
+//                self.model.setMemos(memos:[Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)] )
             }
         }
     }
@@ -42,16 +46,17 @@ struct MemoList:View {
         ScrollView(.vertical){
             VStack{
                 ForEach(self.memos, id: \.self){ memo in
-                    CardView(title: memo.title, contents: memo.contents)
+                    CardView(title: memo.title, contents: memo.content)
                 }
             }
         }
     }
 }
 
-struct Memo : Hashable {
+struct Memo : Hashable ,Decodable, Identifiable{
+    let id=UUID()
     var title : String
-    var contents : Array<String>
+    var content : Array<String>
 }
 
 struct TopView_Previews: PreviewProvider {
