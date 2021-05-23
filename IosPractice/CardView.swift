@@ -24,9 +24,9 @@ struct CardView: View {
             
             // 背景として赤色（red）を指定
             // 背景の付け方はこれで正しいのかは不明
-            Color.red
-                .frame(width:380, height: 400)
-                .cornerRadius(20)
+//            Color.red
+//                .frame(width:380, height: 400)
+//                .cornerRadius(20)
             VStack{
                 // 縦に積んでいく親View　縦型LinearLayout
                 Text(self.title)
@@ -47,6 +47,7 @@ struct CardView: View {
                 height: 400,
                 alignment: .top)
             //.border(Color.black)
+            .background(Color.red)
             .cornerRadius(20)
             
         }
