@@ -30,14 +30,15 @@ struct ContentView: View {
                     //                    Button(action: {
                     //                        //self.model.secondViewPushed = true
                     //                    }) {
-                    //                        Image("pyoko_kagamimochi")
-                    //                            .resizable()
-                    //                            .frame(
-                    //                                width: 380,
-                    //                                height: 400,
-                    //                                alignment: .top)
-                    //                            .cornerRadius(20)
-                    //.disabled(true)
+                    //                    EmptyView()
+                    //                                            Image("pyoko_kagamimochi")
+                    //                                                .resizable()
+                    //                                                .frame(
+                    //                                                    width: 380,
+                    //                                                    height: 400,
+                    //                                                    alignment: .top)
+                    //                                                .cornerRadius(20)
+                    //                    .disabled(false)
                     //Text("次へ")
                 }
                 //                }

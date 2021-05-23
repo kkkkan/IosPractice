@@ -11,7 +11,9 @@ import SwiftUI
 struct IosPracticeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(Model())
+            //ContentView().environmentObject(Model())
+            
+            TopView().environmentObject(Model())
         }
     }
 }
