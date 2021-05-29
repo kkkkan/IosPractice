@@ -17,20 +17,18 @@ struct TopView: View {
     
     var body: some View {
         VStack{
-        
+            
             if(self.apiModel.isLoaded){
-                let contetn1=["a","b","c"]
-                let content2=["1","2","3"]
-//                self.model.setMemos(memos:[Memo(title:"タイトル1",contents: contetn1),Memo(title:"タイトル2",contents: content2)] )
-                MemoList(memos: [Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)])
+                // コンテンツを読んでき終わったら表示
+                MemoList(memos: self.apiModel.memos)
             }
         }
         .onAppear(){
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 // 一秒後の遅延処理
-//                let contetn1=["a","b","c"]
-//                let content2=["1","2","3"]
-//                self.model.setMemos(memos:[Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)] )
+                //                let contetn1=["a","b","c"]
+                //                let content2=["1","2","3"]
+                //                self.model.setMemos(memos:[Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)] )
             }
         }
     }
@@ -54,7 +52,7 @@ struct MemoList:View {
 }
 
 struct Memo : Hashable ,Decodable, Identifiable{
-    let id=UUID()
+    let id=UUID() // warningが出ているけど、letにしておかないとAPI呼び出し後にJSONにパースするところで落ちる
     var title : String
     var content : Array<String>
 }
