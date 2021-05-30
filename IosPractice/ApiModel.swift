@@ -10,19 +10,22 @@ import Combine
 
 class ApiModel: ObservableObject {
     @Published var memos : Array</*OptionalObject<*/Memo/*>*/> = []
-    @Published var isLoaded = false
+    
+    init() {
+        
+    }
+    
     
     private let API_BASE =
         "https://script.google.com/macros/s/AKfycbzFXBeW8J-DYvaKBo5_8sX7QtI9OQQXIJKeZyqbrvFwqUJnDbYAbN74puI31gdqxUyx7A/exec"
     
     private let API_PATH_GET_ALL_DATA="?apiName=getAllData"
+
     
-    init() {
-        load()
-    }
-    
-    private func load() {
+    public func load(memosContainer : Binding<Array<Memo>>? = nil) {
         let url = URL(string: API_BASE+API_PATH_GET_ALL_DATA)!
+        
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             print("data: \(String(describing: data))")
             do{
@@ -33,8 +36,11 @@ class ApiModel: ObservableObject {
                 print(error)
             }
             DispatchQueue.main.async {
-                self.memos = try! JSONDecoder().decode(Array<Memo>.self, from: data!)
-                self.isLoaded=true
+                if(memosContainer == nil){
+                    self.memos = try! JSONDecoder().decode(Array<Memo>.self, from: data!)
+                }else{
+                    memosContainer!.wrappedValue =    try! JSONDecoder().decode(Array<Memo>.self, from: data!)
+                }
             }
         }.resume()
     }

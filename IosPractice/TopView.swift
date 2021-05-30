@@ -10,39 +10,55 @@ import SwiftUI
 
 struct TopView: View {
     @EnvironmentObject var model :Model
-    @EnvironmentObject var apiModel :ApiModel
-    //    @State var isDataLoaded = false
-    var memos : Array<Memo> = []
+    @StateObject var apiModel :ApiModel // EnvironmentObjectだと、bodyが更新されると寿命が終わるらしい。
+    // https://zenn.dev/hirothings/scraps/b29b2a8bc7f30f
     
     
     var body: some View {
         VStack{
-            
-            if(self.apiModel.isLoaded){
-                // コンテンツを読んでき終わったら表示
-                MemoList(memos: self.apiModel.memos)
+            if(self.apiModel.memos.count>0){
+                MemoList(memos: self.apiModel.memos).environmentObject(apiModel)
+            }else{
+                EmptyView()
             }
         }
+        .coordinateSpace(name: "parent")
         .onAppear(){
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                // 一秒後の遅延処理
-                //                let contetn1=["a","b","c"]
-                //                let content2=["1","2","3"]
-                //                self.model.setMemos(memos:[Memo(title:"タイトル1",content: contetn1),Memo(title:"タイトル2",content: content2)] )
-            }
+            // 表示したら読み込み開始
+            self.apiModel.load()
         }
     }
 }
 
 
-struct MemoList:View {
+struct  MemoList:View {
     var memos : Array<Memo>
+    @EnvironmentObject var apiModel :ApiModel
+    
     init(memos : Array<Memo>) {
         self.memos = memos
     }
+    
     var body: some View{
-        ScrollView(.vertical){
+        var swipe : SwipeRefreshController?
+        
+        // 中間橋渡しをしてくれるオブジェクトを作ることで、データが更新されたらクルクルを消せるようにする。
+        let p = Binding<Array<Memo>>(get : {
+            return self.apiModel.memos
+        },set : { memos in
+            swipe?.finishRefresh() // データ取得が終わったのでクルクルを止める
+            self.apiModel.memos = memos
+            
+        })
+        
+        swipe = SwipeRefreshController(coordinateSpaceName:"parent"){
+            self.apiModel.load(memosContainer: p)
+        }
+        
+        return ScrollView(.vertical){
             VStack{
+                swipe
+                
                 ForEach(self.memos, id: \.self){ memo in
                     CardView(title: memo.title, contents: memo.content)
                 }
@@ -59,6 +75,6 @@ struct Memo : Hashable ,Decodable, Identifiable{
 
 struct TopView_Previews: PreviewProvider {
     static var previews: some View {
-        TopView()
+        TopView(apiModel: ApiModel())
     }
 }
