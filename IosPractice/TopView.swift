@@ -61,6 +61,8 @@ struct  MemoList:View {
                 
                 ForEach(self.memos, id: \.self){ memo in
                     CardView(title: memo.title, contents: memo.content)
+                    
+                    
                 }
             }
         }

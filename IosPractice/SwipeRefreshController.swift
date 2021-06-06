@@ -41,25 +41,17 @@ struct SwipeRefreshController: View {
                             self.refreshManager.isRefreshing = true
                             onRefresh()
                         }
-                } /*else if geometry.frame(in: .named(coordinateSpaceName)).maxY < 10 {
-                 Spacer()
-                 .onAppear() {
-                 if isRefreshing {
-                 isRefreshing = false
-                 }
-                 }
-                 }*/
-                HStack {
-                    Spacer()
-                    if (self.refreshManager.isRefreshing) {
+                }
+                if (self.refreshManager.isRefreshing) {
+                    HStack {
+                        Spacer()
+                        
                         ProgressView()
-                    } else {
-                        Text("⬇︎")
-                            .font(.system(size: 28))
+                        
+                        Spacer()
                     }
-                    Spacer()
                 }
             }
-        }.padding(.top, -20)
+        }//.padding(.top, -40)
     }
 }
