@@ -22,7 +22,6 @@ struct TopView: View {
                 EmptyView()
             }
         }
-        .coordinateSpace(name: "parent")
         .onAppear(){
             // 表示したら読み込み開始
             self.apiModel.load()
@@ -55,16 +54,20 @@ struct  MemoList:View {
             self.apiModel.load(memosContainer: p)
         }
         
-        return ScrollView(.vertical){
-            VStack{
-                swipe
-                
-                ForEach(self.memos, id: \.self){ memo in
-                    CardView(title: memo.title, contents: memo.content)
+        return NavigationView{
+            ScrollView(.vertical){
+                VStack{
+                    swipe
                     
-                    
+                    ForEach(self.memos, id: \.self){ memo in
+                        NavigationLink(
+                            destination: Text(memo.title)){
+                            CardView(title: memo.title, contents: memo.content)
+                        }
+                    }
                 }
             }
+            .coordinateSpace(name: "parent")
         }
     }
 }
@@ -80,3 +83,4 @@ struct TopView_Previews: PreviewProvider {
         TopView(apiModel: ApiModel())
     }
 }
+
