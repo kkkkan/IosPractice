@@ -17,6 +17,7 @@
 		3F8175B92659E2A700C69C1A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175B82659E2A700C69C1A /* TopView.swift */; };
 		3F8175BB265A7E9100C69C1A /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175BA265A7E9100C69C1A /* ApiModel.swift */; };
 		3F8175BD26623D8500C69C1A /* SwipeRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175BC26623D8500C69C1A /* SwipeRefreshController.swift */; };
+		3F8175BF267633B800C69C1A /* MemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175BE267633B800C69C1A /* MemoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F8175B82659E2A700C69C1A /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		3F8175BA265A7E9100C69C1A /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		3F8175BC26623D8500C69C1A /* SwipeRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeRefreshController.swift; sourceTree = "<group>"; };
+		3F8175BE267633B800C69C1A /* MemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				3F8175B82659E2A700C69C1A /* TopView.swift */,
 				3F8175BA265A7E9100C69C1A /* ApiModel.swift */,
 				3F8175BC26623D8500C69C1A /* SwipeRefreshController.swift */,
+				3F8175BE267633B800C69C1A /* MemoDetailView.swift */,
 			);
 			path = IosPractice;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8175BF267633B800C69C1A /* MemoDetailView.swift in Sources */,
 				3F8175B32658CD8500C69C1A /* Model.swift in Sources */,
 				3F8175882658C75700C69C1A /* IosPracticeApp.swift in Sources */,
 				3F8175B92659E2A700C69C1A /* TopView.swift in Sources */,

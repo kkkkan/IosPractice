@@ -60,8 +60,9 @@ struct  MemoList:View {
                     swipe
                     
                     ForEach(self.memos, id: \.self){ memo in
+                        // memoをタッチで詳細に飛べるようにする
                         NavigationLink(
-                            destination: Text(memo.title)){
+                            destination: MemoDetailView(memo:memo)){
                             CardView(title: memo.title, contents: memo.content)
                         }
                     }
