@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+
 @main
 struct IosPracticeApp: App {
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            //ContentView().environmentObject(Model())
-            
-            TopView(apiModel: ApiModel()).environmentObject(Model())
+            TopView(apiModel: ApiModel())
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

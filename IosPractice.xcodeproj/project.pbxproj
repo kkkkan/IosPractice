@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F43DCF326875A8B0050E281 /* MemoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F43DCF126875A8B0050E281 /* MemoModel.xcdatamodeld */; };
+		3F76A734269AE54500F44C8B /* PresistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A733269AE54500F44C8B /* PresistanceController.swift */; };
 		3F8175882658C75700C69C1A /* IosPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8175872658C75700C69C1A /* IosPracticeApp.swift */; };
 		3F81758C2658C75800C69C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81758B2658C75800C69C1A /* Assets.xcassets */; };
 		3F81758F2658C75800C69C1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81758E2658C75800C69C1A /* Preview Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F43DCF226875A8B0050E281 /* MemoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoModel.xcdatamodel; sourceTree = "<group>"; };
+		3F76A733269AE54500F44C8B /* PresistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistanceController.swift; sourceTree = "<group>"; };
 		3F8175842658C75700C69C1A /* IosPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8175872658C75700C69C1A /* IosPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosPracticeApp.swift; sourceTree = "<group>"; };
 		3F81758B2658C75800C69C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3F8175872658C75700C69C1A /* IosPracticeApp.swift */,
+				3F76A733269AE54500F44C8B /* PresistanceController.swift */,
 				3F8175B6265924E500C69C1A /* CardView.swift */,
 				3F81758B2658C75800C69C1A /* Assets.xcassets */,
 				3F8175902658C75800C69C1A /* Info.plist */,
@@ -113,6 +118,7 @@
 				3F8175B22658CD8500C69C1A /* Model.swift */,
 				3F8175B82659E2A700C69C1A /* TopView.swift */,
 				3F8175BA265A7E9100C69C1A /* ApiModel.swift */,
+				3F43DCF126875A8B0050E281 /* MemoModel.xcdatamodeld */,
 				3F8175BC26623D8500C69C1A /* SwipeRefreshController.swift */,
 				3F8175BE267633B800C69C1A /* MemoDetailView.swift */,
 			);
@@ -274,11 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F76A734269AE54500F44C8B /* PresistanceController.swift in Sources */,
 				3F8175BF267633B800C69C1A /* MemoDetailView.swift in Sources */,
 				3F8175B32658CD8500C69C1A /* Model.swift in Sources */,
 				3F8175882658C75700C69C1A /* IosPracticeApp.swift in Sources */,
 				3F8175B92659E2A700C69C1A /* TopView.swift in Sources */,
 				3F8175B7265924E500C69C1A /* CardView.swift in Sources */,
+				3F43DCF326875A8B0050E281 /* MemoModel.xcdatamodeld in Sources */,
 				3F8175BD26623D8500C69C1A /* SwipeRefreshController.swift in Sources */,
 				3F8175BB265A7E9100C69C1A /* ApiModel.swift in Sources */,
 			);
@@ -439,6 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"IosPractice/Preview Content\"";
+				DEVELOPMENT_TEAM = Z43KFTFL8P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = IosPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -460,6 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"IosPractice/Preview Content\"";
+				DEVELOPMENT_TEAM = Z43KFTFL8P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = IosPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -594,6 +604,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F43DCF126875A8B0050E281 /* MemoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F43DCF226875A8B0050E281 /* MemoModel.xcdatamodel */,
+			);
+			currentVersion = 3F43DCF226875A8B0050E281 /* MemoModel.xcdatamodel */;
+			path = MemoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F81757C2658C75700C69C1A /* Project object */;
 }
