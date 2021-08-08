@@ -30,13 +30,25 @@ class ApiModel: ObservableObject {
         URLSession.shared.dataTask(with: url) { data, response, error in
             print("data: \(String(describing: data))")
             do{
-                let couponData = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                print(couponData) // Jsonの中身を表示
+                let data = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                print(data) // Jsonの中身を表示
             }
             catch {
                 print(error)
             }
             DispatchQueue.main.async {
+                // 取得できたら
+                // CoreDataの中身を入れ替えて最新の状態にする
+                
+                // まずは、今CoreDataに入っているものを全て削除
+                let fetchData = try! viewContext.fetch(Memos.fetchRequest())
+                if(!fetchData.isEmpty){
+                    for i in 0..<fetchData.count{
+                        let deleteObject = fetchData[i] as! Memos
+                        viewContext.delete(deleteObject)
+                    }
+                }
+                // 次に、今とってきたものをすべてCoreDataに収納
                 let memos = try! JSONDecoder().decode(Array<Memo>.self, from: data!)
                 memos.forEach{ m in
                     let newItem = Memos(context: viewContext)
@@ -50,6 +62,7 @@ class ApiModel: ObservableObject {
                     
                 }
                 do {
+                    // 今までの操作をまとめて保存
                     try viewContext.save()
                 } catch {
                     // Replace this implementation with code to handle the error appropriately.
